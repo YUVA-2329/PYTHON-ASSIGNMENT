@@ -21,6 +21,7 @@ while True:
         print("INVALID INPUT: PLEASE ENTER A NUMERIC VALUE FOR SALARY")
 
 for employee, salary in total_salary.items():
-    print(f"TOTAL SALARY OF {employee} IS: {salary:.2f}")
+    print(f"TOTAL SALARY OF {employee} IS: {salary}")
+
 
 print("PROGRAM 6 COMPLETED")
