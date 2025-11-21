@@ -15,15 +15,18 @@ def process_purchase(file_name):
             items = file.readlines()
         
         item_prices = {}
+
         for item in items:
             name, price = item.strip().split(',')
             item_prices[name] = float(price)
-        
+
+     
         num_items = len(item_prices)
-        num_free_items = num_items // 3  # Assuming every 3rd item is free
+        num_free_items = num_items //3 
         amount_to_pay = sum(item_prices.values())
         discount_given = sum(sorted(item_prices.values())[:num_free_items])
         final_amount_paid = amount_to_pay - discount_given
+
         
         print(f"Processing {file_name}:")
         print(f"No of items purchased: {num_items}")
@@ -31,12 +34,13 @@ def process_purchase(file_name):
         print(f"Amount to pay: {amount_to_pay}")
         print(f"Discount given: {discount_given}")
         print(f"Final amount paid: {final_amount_paid}\n")
-    
+
     except FileNotFoundError:
         print(f"Error: The file {file_name} was not found.")
-    except Exception as e:
-        print(f"An error occurred: {e}")
+
+
 
 process_purchase('Purchase-1.txt')
 process_purchase('Purchase-2.txt')
+
 print("PROGRAM 7 COMPLETED")
