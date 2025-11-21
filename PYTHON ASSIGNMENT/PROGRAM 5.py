@@ -5,6 +5,28 @@ gcd(a,b)
 Include exception handling for invalid or negative inputs. Import and test these functions from another script.
 Concepts: Loops, recursion, functions, input validation.
 '''
+# math_utils.py
+
+def factorial(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    return result
+
+
+def is_prime(n):
+    
+    for i in range(2, int(n**0.5) + 1):
+        if n % i == 0:
+            return False
+    return True
+
+
+def gcd(a, b):
+    while b != 0:
+        a, b = b, a % b
+    return a
+
 import math_utils
 try:
     num1=int(input("ENTER A POSITIVE INTEGER FOR FACTORIAL:"))
@@ -32,4 +54,5 @@ except ValueError as e:
 math_utils.factorial(5)
 math_utils.is_prime(7)
 math_utils.gcd(48, 18)
+
 print("PROGRAM 5 COMPLETED")
